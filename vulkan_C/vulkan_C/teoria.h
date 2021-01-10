@@ -1,4 +1,19 @@
 /*
+----------------------------------206-6. [THEORY] Surfaces, Image Views, and the Swapchain--------------
+-Surfaces
+-Swapchains
+	-Surface capabilities: What the surface is capable of handling (e.g. image size)
+	-Surface format: The format of the surface the Swapchain will present (e.g.RGB)
+	-Presentation Mode: The order and timing of images being presented to the surface
+		VK_PRESENT_MODE_MAILBOX_KHR = evitar "tearing" o sopreposicion de imagenes
+-ImageViews
+
+
+
+*/
+
+
+/*
 ----------------------------------203-INSTANCES, DEVICES AND VALIDATION-------------------------------------------
 
 VULKAN reconoce dos tipos de dispositivos
