@@ -149,6 +149,7 @@
     <ClInclude Include="teoria.h" />
     <ClInclude Include="Utilities.h" />
     <ClInclude Include="VulkanRenderer.h" />
+    <ClInclude Include="VulkanValidation.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

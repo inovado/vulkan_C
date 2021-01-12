@@ -1,43 +1,47 @@
 #pragma once
+
+
 #define GLFW_INCLUDE_VULKAN
 #include <glfw3.h>
 
-#include <stdexcept> // validacion de instrucciones en vulkan
+#include <stdexcept>
 #include <vector>
+#include <set>
 
+#include "VulkanValidation.h"
 #include "Utilities.h"
-
 
 class VulkanRenderer
 {
 public:
+	VulkanRenderer();
+
 	int init(GLFWwindow* newWindow);
 	void cleanup();
 
-
+	~VulkanRenderer();
 
 private:
-
-
-
 	GLFWwindow* window;
 
-	// Vulkan components
+	// Vulkan Components
 	VkInstance instance;
-
-	// Dispositivo fisico
+	VkDebugReportCallbackEXT callback;
 	struct {
 		VkPhysicalDevice physicalDevice;
 		VkDevice logicalDevice;
-	}mainDevice;
+	} mainDevice;
 	VkQueue graphicsQueue;
+	VkQueue presentationQueue;
+	VkSurfaceKHR surface; // superficie
 
 
 	// Vulkan Functions
 	// - Create Functions
 	void createInstance();
-
+	void createDebugCallback();
 	void createLogicalDevice();
+	void createSurface(); // creacion de una superficie
 
 	// - Get Functions
 	void getPhysicalDevice();
@@ -45,14 +49,13 @@ private:
 	// - Support Functions
 	// -- Checker Functions
 	bool checkInstanceExtensionSupport(std::vector<const char*>* checkExtensions);
+	bool checkDeviceExtensionSupport(VkPhysicalDevice device);
+	bool checkValidationLayerSupport();
 	bool checkDeviceSuitable(VkPhysicalDevice device);
 
-	// -- Getter functions
+	// -- Getter Functions
 	QueueFamilyIndices getQueueFamilies(VkPhysicalDevice device);
-
-
+	SwapChainDetails getSwapChainDetails(VkPhysicalDevice device);
 
 };
-
-
 
