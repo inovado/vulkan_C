@@ -1,4 +1,31 @@
 /*
+
+----------------------------------210. [CODE] Graphics Pipeline Part 1 Shader Modules--------------
+
+
+----------------------------------209. [THEORY] Graphics Pipeline--------------
+
+-vertex index buffer	-Defindes layout format of vertex input data
+-input assembler		-Defines how to assemble vertices to primitives(e.g. Triangles or lines)
+ -vertex shader			-
+-tessellation
+-geometry shader
+-rasterization			-how to handle computation of fragments from primitives.
+-fragment shader
+-color blending
+-framebuffer
+
+RENDER PASS for an attachment
+	-Initial Layout
+	-Subpass 1 layout
+	-subpass 2 layout
+	-final layout
+
+
+
+*/
+
+/*
 ----------------------------------206-6. [THEORY] Surfaces, Image Views, and the Swapchain--------------
 -Surfaces
 -Swapchains
@@ -9,6 +36,13 @@
 -ImageViews
 
 
+- Buffers
+- Swapchain
+- GLFW - Interfaz entre la ventana creada y GLFW y VULKAN
+- Presentation Queue
+- Monitors work
+	- Monitors draw starting at the top-left pixel, and then drawing to the screen row by row.
+	-
 
 */
 
